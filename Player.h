@@ -20,7 +20,7 @@ class Player : public Drawable{
 
     public:
         Player();
-        Player(int x, int y, Texture &texture, IntRect &rect);
+        Player(int x, int y, Texture &texture, IntRect rect);
         virtual void draw(RenderTarget &rt,RenderStates rs) const;
         void Update();
 

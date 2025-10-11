@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Atlas.h"
+#include "Bullet.h"
 
 
 using namespace std;
@@ -20,6 +21,9 @@ int main() {
 
     Player player(288, 555, spritesheet, Atlas::kPlayerRect.rect());
 
+    Bullet bullet(288, 250, spritesheet, Atlas::kBulletPlayerRect.rect());
+
+
     while (window.isOpen()) {
         Event event;
         // Si el evento es del tipo cerrar evento -> cerramos ventana
@@ -28,8 +32,10 @@ int main() {
         }
 
         player.Update();
+        //bullet.Update();
         window.clear(); // En cada frame limpiammos ventana
         window.draw(player);
+        window.draw(bullet);
         window.display(); // Mostramos ventana
 
     }

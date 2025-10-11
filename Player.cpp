@@ -8,7 +8,7 @@
 
 
 
-Player::Player(int x, int y, Texture &texture, IntRect &rect) {
+Player::Player(int x, int y, Texture &texture, IntRect rect) {
     sprite.setTexture(texture);
     sprite.setTextureRect(rect);
     sprite.setPosition(x, y); // le asignamos la posicion

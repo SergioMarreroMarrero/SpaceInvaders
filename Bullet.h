@@ -16,8 +16,9 @@ class Bullet : public Drawable{
     private:
         Sprite sprite;
     public:
-        Bullet(int x, int y, Texture &texture);
+        Bullet(int x, int y, Texture &texture, IntRect rect);
         virtual void draw(RenderTarget &rt,RenderStates rs) const;
+        void Update();
 };
 
 

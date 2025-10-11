@@ -3,20 +3,27 @@
 //
 
 #include "Bullet.h"
+#include "Atlas.h"
 
 
 
-Bullet::Bullet(int x, int y, Texture &texture) {
+Bullet::Bullet(int x, int y, Texture &texture, IntRect rect) {
     sprite.setTexture(texture);
-    sprite.setTextureRect(IntRect(13*8+8, 7*8+7, 16, 8));
+    sprite.setTextureRect(rect);
     sprite.setPosition(x, y);
-    sprite.setScale(3, 3);
+    sprite.setScale(Atlas::kGlobalScale, Atlas::kGlobalScale);
 };
+
 
 void Bullet::draw(RenderTarget &rt,RenderStates rs) const {
-
+    rt.draw(sprite, rs);
 };
 
+/*
+void Bullet::Update(){
+
+};
+*/
 
 /*
 Player::Player(int x, int y, Texture &texture) {

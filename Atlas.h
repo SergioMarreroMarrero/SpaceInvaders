@@ -20,18 +20,27 @@ namespace Atlas {
 
     struct SpriteSection {
         int x, y, w, h;
-        IntRect rect() const {return IntRect{x*kSpritePixels, y*kSpritePixels, w*kSpritePixels, h*(kSpritePixels-1)};}
+        IntRect rect() const {return IntRect{x, y, w, h};}
     };
 
     // Sprites
     // Secciones de los sprites
+    // Player
     inline constexpr SpriteSection kPlayerRect {
-        14,
-        8,
-        2,
-        1 };
-    }
+        14 *kSpritePixels,
+        8  *kSpritePixels,
+        2  *kSpritePixels,
+        1  *(kSpritePixels-1) };
 
+
+    // Bullet
+    inline constexpr SpriteSection kBulletPlayerRect {
+    15 *kSpritePixels,
+    6 *(kSpritePixels) + (kSpritePixels-2),
+    kSpritePixels ,
+    kSpritePixels
+    };
+    }
 
 
 #endif //SPACEINVADERS_ATLAS_H
