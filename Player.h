@@ -19,7 +19,8 @@ class Player : public Drawable{
         int vel;
 
     public:
-        Player(int x, int y, Texture &texture);
+        Player();
+        Player(int x, int y, Texture &texture, IntRect &rect);
         virtual void draw(RenderTarget &rt,RenderStates rs) const;
         void Update();
 

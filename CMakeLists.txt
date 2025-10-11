@@ -11,7 +11,8 @@ add_executable(SpaceInvaders main.cpp
         Player.cpp
         Player.h
         Bullet.cpp
-        Bullet.h)
+        Bullet.h
+        Atlas.h)
 target_link_libraries(SpaceInvaders PRIVATE sfml-graphics sfml-window sfml-system)
 
 file(COPY ${CMAKE_SOURCE_DIR}/spritesheet.png

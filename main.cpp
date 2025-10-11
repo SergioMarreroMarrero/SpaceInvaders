@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "Atlas.h"
 
 
 using namespace std;
@@ -8,6 +9,8 @@ using namespace sf;
 
 
 int main() {
+
+
     RenderWindow window(VideoMode(600, 600), "Space Invaders");
     window.setFramerateLimit(60);
     Texture spritesheet;
@@ -15,7 +18,7 @@ int main() {
         cout << "Error loading spritesheet.png" << endl;
     };
 
-    Player player(288, 555, spritesheet);
+    Player player(288, 555, spritesheet, Atlas::kPlayerRect.rect());
 
     while (window.isOpen()) {
         Event event;
