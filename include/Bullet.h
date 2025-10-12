@@ -15,8 +15,9 @@ using namespace sf;
 class Bullet : public Drawable{
     private:
         Sprite sprite;
+        int vel;
     public:
-        Bullet(int x, int y, Texture &texture, IntRect rect);
+        Bullet(int x, int y, Texture &texture, IntRect rect, int v);
         virtual void draw(RenderTarget &rt,RenderStates rs) const;
         void Update();
 };

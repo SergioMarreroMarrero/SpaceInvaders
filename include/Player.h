@@ -23,6 +23,9 @@ class Player : public Drawable{
         Player(int x, int y, Texture &texture, IntRect rect);
         virtual void draw(RenderTarget &rt,RenderStates rs) const;
         void Update();
+        bool Shoot();
+        Vector2f Pos();
+
 
 };
 

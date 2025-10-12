@@ -15,13 +15,13 @@ int main() {
     RenderWindow window(VideoMode(600, 600), "Space Invaders");
     window.setFramerateLimit(60);
     Texture spritesheet;
-    if (!spritesheet.loadFromFile("assets/spritesheet.png")) {
+    if (!spritesheet.loadFromFile(Atlas::kPathToSpriteSheet)) {
         cout << "Error loading spritesheet.png" << endl;
     };
 
     Player player(288, 555, spritesheet, Atlas::kPlayerRect.rect());
 
-    Bullet bullet(288, 250, spritesheet, Atlas::kBulletPlayerRect.rect());
+    Bullet bullet(288, 250, spritesheet, Atlas::kBulletPlayerRect.rect(), -5);
 
 
     while (window.isOpen()) {
@@ -31,7 +31,12 @@ int main() {
             if (event.type==Event::Closed) window.close();
         }
 
+        /*Dentro del player necesitamos saber si se ha pulsado el espacio.
+         *Si esto es asi, entonces en el main instanciamos una bala*/
+
         player.Update();
+
+        bullet.Update();
         //bullet.Update();
         window.clear(); // En cada frame limpiammos ventana
         window.draw(player);

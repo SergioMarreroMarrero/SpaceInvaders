@@ -39,3 +39,14 @@ void Player::Update() {
     //cout << sprite.getPosition().y << endl;
 };
 
+
+bool Player::Shoot() {
+    if (Keyboard::isKeyPressed(Keyboard::Space)) {
+        return true;
+    }
+    return false;
+};
+
+Vector2f Player::Pos() {
+    return sprite.getPosition();
+};

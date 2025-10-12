@@ -7,17 +7,23 @@
 
 
 
-Bullet::Bullet(int x, int y, Texture &texture, IntRect rect) {
+Bullet::Bullet(int x, int y, Texture &texture, IntRect rect, int v) {
     sprite.setTexture(texture);
     sprite.setTextureRect(rect);
     sprite.setPosition(x, y);
     sprite.setScale(Atlas::kGlobalScale, Atlas::kGlobalScale);
+    vel=v;
 };
 
 
 void Bullet::draw(RenderTarget &rt,RenderStates rs) const {
     rt.draw(sprite, rs);
 };
+
+void Bullet::Update() {
+    sprite.move(0, static_cast<float>(vel));
+};
+
 
 /*
 void Bullet::Update(){
