@@ -2,8 +2,8 @@
 // Created by oigre on 11/10/2025.
 //
 
-#include "Bullet.h"
-#include "Atlas.h"
+#include "../include/Bullet.h"
+#include "../include/Atlas.h"
 
 
 

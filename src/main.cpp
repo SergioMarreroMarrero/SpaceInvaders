@@ -1,8 +1,8 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "Player.h"
-#include "Atlas.h"
-#include "Bullet.h"
+#include "../include/Player.h"
+#include "../include/Atlas.h"
+#include "../include/Bullet.h"
 
 
 using namespace std;
@@ -15,7 +15,7 @@ int main() {
     RenderWindow window(VideoMode(600, 600), "Space Invaders");
     window.setFramerateLimit(60);
     Texture spritesheet;
-    if (!spritesheet.loadFromFile("spritesheet.png")) {
+    if (!spritesheet.loadFromFile("assets/spritesheet.png")) {
         cout << "Error loading spritesheet.png" << endl;
     };
 

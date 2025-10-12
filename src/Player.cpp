@@ -2,8 +2,8 @@
 // Created by oigre on 09/10/2025.
 //
 
-#include "Player.h"
-#include "Atlas.h"
+#include "../include/Player.h"
+#include "../include/Atlas.h"
 
 
 

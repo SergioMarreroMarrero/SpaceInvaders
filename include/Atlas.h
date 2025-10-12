@@ -16,7 +16,7 @@ using namespace std;
 namespace Atlas {
     inline constexpr float kGlobalScale = 3.0f;
     inline constexpr int kSpritePixels  = 8;
-    inline constexpr const char* kPath = "spritesheet.png";
+    inline constexpr const char* kPath = "assets/spritesheet.png";
 
     struct SpriteSection {
         int x, y, w, h;
