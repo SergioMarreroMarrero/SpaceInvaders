@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <SFML/Graphics.hpp>
 #include "../include/Player.h"
 #include "../include/Atlas.h"
@@ -11,7 +12,7 @@ using namespace sf;
 
 int main() {
 
-
+    vector<Bullet> bulletsPlayer;
     RenderWindow window(VideoMode(600, 600), "Space Invaders");
     window.setFramerateLimit(60);
     Texture spritesheet;
@@ -21,7 +22,7 @@ int main() {
 
     Player player(288, 555, spritesheet, Atlas::kPlayerRect.rect());
 
-    Bullet bullet(288, 250, spritesheet, Atlas::kBulletPlayerRect.rect(), -5);
+    //Bullet bullet(288, 250, spritesheet, Atlas::kBulletPlayerRect.rect(), -5);
 
 
     while (window.isOpen()) {
@@ -35,12 +36,22 @@ int main() {
          *Si esto es asi, entonces en el main instanciamos una bala*/
 
         player.Update();
+        if (player.Shoot()) {
+            int x_bullet, y_bullet;
+            x_bullet = player.Pos().x+Atlas::kSpritePixels*Atlas::kGlobalScale;
+            y_bullet = player.Pos().y-Atlas::kSpritePixels*Atlas::kGlobalScale;
+            Bullet bullet(x_bullet, y_bullet, spritesheet, Atlas::kBulletPlayerRect.rect(), -5);
+            bulletsPlayer.push_back(bullet);
+        }
 
-        bullet.Update();
         //bullet.Update();
         window.clear(); // En cada frame limpiammos ventana
         window.draw(player);
-        window.draw(bullet);
+        for (auto &bullet : bulletsPlayer) {
+            bullet.Update();
+            window.draw(bullet);
+        }
+
         window.display(); // Mostramos ventana
 
     }
