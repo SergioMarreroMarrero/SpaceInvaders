@@ -36,7 +36,7 @@ int main() {
          *Si esto es asi, entonces en el main instanciamos una bala*/
 
         player.Update();
-        if (player.Shoot()&&bulletsPlayer.size()==0) {
+        if (player.Shoot()&&bulletsPlayer.size()<(GameSettings::MaxBullets)) {
             int x_bullet, y_bullet;
             x_bullet = player.Pos().x+Atlas::kSpritePixels*Atlas::kGlobalScale;
             y_bullet = player.Pos().y-Atlas::kSpritePixels*Atlas::kGlobalScale;

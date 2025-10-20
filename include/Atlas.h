@@ -11,7 +11,9 @@
 using namespace sf;
 using namespace std;
 
-
+namespace GameSettings {
+    inline constexpr int MaxBullets = 2;
+}
 
 namespace Atlas {
     inline constexpr float kGlobalScale = 3.0f;
@@ -41,6 +43,7 @@ namespace Atlas {
     kSpritePixels
     };
     }
+
 
 
 #endif //SPACEINVADERS_ATLAS_H
