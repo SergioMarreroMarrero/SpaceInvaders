@@ -20,6 +20,7 @@ class Bullet : public Drawable{
         Bullet(int x, int y, Texture &texture, IntRect rect, int v);
         virtual void draw(RenderTarget &rt,RenderStates rs) const;
         void Update();
+        Vector2f Pos();
 };
 
 

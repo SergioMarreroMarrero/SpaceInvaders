@@ -36,12 +36,20 @@ int main() {
          *Si esto es asi, entonces en el main instanciamos una bala*/
 
         player.Update();
-        if (player.Shoot()) {
+        if (player.Shoot()&&bulletsPlayer.size()==0) {
             int x_bullet, y_bullet;
             x_bullet = player.Pos().x+Atlas::kSpritePixels*Atlas::kGlobalScale;
             y_bullet = player.Pos().y-Atlas::kSpritePixels*Atlas::kGlobalScale;
             Bullet bullet(x_bullet, y_bullet, spritesheet, Atlas::kBulletPlayerRect.rect(), -5);
             bulletsPlayer.push_back(bullet);
+
+        }
+
+        if(bulletsPlayer.size()>0) {
+            if (bulletsPlayer.at(0).Pos().y < -Atlas::kSpritePixels*Atlas::kGlobalScale) {
+                cout << Atlas::kSpritePixels*Atlas::kGlobalScale << endl;
+                bulletsPlayer.erase(bulletsPlayer.begin());
+            };
         }
 
         //bullet.Update();

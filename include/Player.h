@@ -17,6 +17,7 @@ class Player : public Drawable{
         Sprite sprite;
         int vida;
         int vel;
+        bool shoot=false;
 
     public:
         Player();

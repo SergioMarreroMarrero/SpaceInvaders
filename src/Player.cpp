@@ -41,8 +41,11 @@ void Player::Update() {
 
 
 bool Player::Shoot() {
-    if (Keyboard::isKeyPressed(Keyboard::Space)) {
+    if (Keyboard::isKeyPressed(Keyboard::Space)&& !shoot) {
+        shoot=true;
         return true;
+    }else if(!Keyboard::isKeyPressed(Keyboard::Space)) {
+        shoot=false;
     }
     return false;
 };
